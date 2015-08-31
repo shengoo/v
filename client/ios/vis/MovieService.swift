@@ -62,9 +62,7 @@ class MovieService {
     
     func addShoucang(movie:Movie){
         let list = Defaults["sc"].arrayValue
-        println(list)
         var newlist:NSMutableArray = NSMutableArray(array: list)
-        println(newlist)
         var data = NSKeyedArchiver.archivedDataWithRootObject(movie)
         newlist.addObject(data)
         Defaults["sc"] = newlist
@@ -99,6 +97,47 @@ class MovieService {
         for item in list{
             var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
 //            result.addObject(a)
+            result.append(a)
+        }
+        return result
+    }
+    
+    
+    func addHuancun(movie:Movie){
+        let list = Defaults["hc"].arrayValue
+        var newlist:NSMutableArray = NSMutableArray(array: list)
+        var data = NSKeyedArchiver.archivedDataWithRootObject(movie)
+        newlist.addObject(data)
+        Defaults["hc"] = newlist
+        
+    }
+    func deleteHuancun(movie:Movie){
+        let list = Defaults["hc"].arrayValue
+        var newlist:NSMutableArray = NSMutableArray(array: list)
+        for item in list{
+            var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
+            if(a.id == movie.id){
+                newlist.removeObject(item)
+            }
+        }
+        Defaults["hc"] = newlist
+    }
+    func checkHuancun(movie:Movie)->Bool{
+        var result = false
+        let list = Defaults["hc"].arrayValue
+        for item in list{
+            var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
+            if(a.id == movie.id){
+                return true
+            }
+        }
+        return result
+    }
+    func getHuancun()->[Movie]{
+        let list = Defaults["hc"].arrayValue
+        var result = [Movie]()
+        for item in list{
+            var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
             result.append(a)
         }
         return result

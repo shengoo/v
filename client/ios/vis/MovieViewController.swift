@@ -69,6 +69,9 @@ class MovieViewController: UIViewController {
         if(service.checkShoucang(movie!)){
             ScBtn.selected = true
         }
+        if(service.checkHuancun(movie!)){
+            HcBtn.selected = true
+        }
         
     }
     
@@ -229,6 +232,11 @@ class MovieViewController: UIViewController {
 
     @IBAction func Huancun(sender: UIButton) {
         sender.selected = !sender.selected
+        if(sender.selected){
+            service.addHuancun(movie!)
+        }else{
+            service.deleteHuancun(movie!)
+        }
     }
 
     /*
