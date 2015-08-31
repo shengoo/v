@@ -16,6 +16,8 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var cateLbl: UILabel!
     
+    var service = MovieService()
+    
     var movie:Movie?{
         didSet {
             
@@ -38,10 +40,10 @@ class MovieViewController: UIViewController {
 //        cateLbl.text = movie!.category + " / " + (movie!.length / 60) + "'" + (movie!.length / 60) + "\""
         cateLbl.text = "\(movie!.category)  /  \(movie!.length / 60)' \(movie!.length % 60)\""
 //        self.descLbl.text = movie?.description
-        var txt = NSMutableAttributedString(string: movie!.description)
+        var txt = NSMutableAttributedString(string: movie!.desc)
         var style = NSMutableParagraphStyle()
         style.lineSpacing = 10
-        txt.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, count(movie!.description)))
+        txt.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSMakeRange(0, count(movie!.desc)))
 //        txt.addAttributes(style, range: NSMakeRange(0, count(movie!.description)))
         descLbl.attributedText = txt
         
@@ -112,11 +114,11 @@ class MovieViewController: UIViewController {
         UMSocialData.defaultData().title = movie!.title
         UMSocialData.defaultData().extConfig.qqData.title = movie!.title
         UMSocialData.defaultData().extConfig.wechatSessionData.title = movie!.title
-        UMSocialData.defaultData().extConfig.sinaData.shareText = movie!.description + " " + url
+        UMSocialData.defaultData().extConfig.sinaData.shareText = movie!.desc + " " + url
         
         UMSocialSnsService.presentSnsIconSheetView(self,
             appKey:"55c32328e0f55ae881000579",
-            shareText:movie?.description,
+            shareText:movie?.desc,
             shareImage:image.image,
             shareToSnsNames:shareTypes as [AnyObject],
             delegate:nil);
@@ -194,6 +196,12 @@ class MovieViewController: UIViewController {
     
     @IBAction func shareBtnPressed(sender: UIButton) {
         share()
+//        service.addShoucang(movie!)
+//        service.deleteShoucang(movie!)
+//        var list = service.getShoucang()
+//        for item in list {
+//            println(item.title)
+//        }
     }
 
     /*

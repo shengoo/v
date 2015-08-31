@@ -402,7 +402,6 @@
 				049C19421B5D39DE0031A77A /* Main.storyboard */,
 				049C19451B5D39DE0031A77A /* Images.xcassets */,
 				049C19471B5D39DE0031A77A /* LaunchScreen.xib */,
-				047FF6811B7302F3004E1209 /* Player.swift */,
 				049C193A1B5D39DE0031A77A /* Supporting Files */,
 				047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */,
 				047FF5F41B65237F004E1209 /* MovieTableViewCell.xib */,
@@ -449,6 +448,7 @@
 				047FF6831B73925C004E1209 /* umeng share */,
 				048DA2571B73604900F7F4E7 /* umeng analytics */,
 				261B1C601B93FE0100C77B34 /* SwiftyUserDefaults.swift */,
+				047FF6811B7302F3004E1209 /* Player.swift */,
 			);
 			name = libs;
 			sourceTree = "<group>";

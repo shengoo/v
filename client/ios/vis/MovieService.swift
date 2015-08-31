@@ -15,6 +15,7 @@ class MovieService {
     var manager:AFHTTPRequestOperationManager
     
     
+    
     init(){
         self.settings = Settings()
         self.manager = AFHTTPRequestOperationManager()
@@ -57,6 +58,39 @@ class MovieService {
 //            callback(response)
 //        })
 //        task.resume()
+    }
+    
+    func addShoucang(movie:Movie){
+        let list = Defaults["sc"].arrayValue
+        println(list)
+        var newlist:NSMutableArray = NSMutableArray(array: list)
+        println(newlist)
+        var data = NSKeyedArchiver.archivedDataWithRootObject(movie)
+        newlist.addObject(data)
+        Defaults["sc"] = newlist
+        
+    }
+    func deleteShoucang(movie:Movie){
+        let list = Defaults["sc"].arrayValue
+        var newlist:NSMutableArray = NSMutableArray(array: list)
+        for item in list{
+            var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
+            if(a.id == movie.id){
+                newlist.removeObject(item)
+            }
+        }
+        Defaults["sc"] = newlist
+    }
+    func getShoucang()->[Movie]{
+        let list = Defaults["sc"].arrayValue
+//        let result:NSMutableArray = NSMutableArray()
+        var result = [Movie]()
+        for item in list{
+            var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
+//            result.addObject(a)
+            result.append(a)
+        }
+        return result
     }
     
 }
