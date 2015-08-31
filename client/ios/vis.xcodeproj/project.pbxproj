@@ -66,6 +66,7 @@
 		049C19461B5D39DE0031A77A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049C19451B5D39DE0031A77A /* Images.xcassets */; };
 		049C19491B5D39DE0031A77A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 049C19471B5D39DE0031A77A /* LaunchScreen.xib */; };
 		049C19551B5D39DE0031A77A /* visTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C19541B5D39DE0031A77A /* visTests.swift */; };
+		261B1C611B93FE0100C77B34 /* SwiftyUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261B1C601B93FE0100C77B34 /* SwiftyUserDefaults.swift */; };
 		6A5C27124AAF4CE3E6EB2AE7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CB2B080F6FC7A073331DA2 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +176,7 @@
 		049C19541B5D39DE0031A77A /* visTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visTests.swift; sourceTree = "<group>"; };
 		11653F2297A187A20C153660 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		21CB2B080F6FC7A073331DA2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		261B1C601B93FE0100C77B34 /* SwiftyUserDefaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyUserDefaults.swift; sourceTree = "<group>"; };
 		31284861B1D7DB8C3FD77D7B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -391,9 +393,8 @@
 		049C19391B5D39DE0031A77A /* vis */ = {
 			isa = PBXGroup;
 			children = (
+				261B1C5F1B93FDA100C77B34 /* libs */,
 				0421CDE11B84BCCC00125090 /* fonts */,
-				047FF6831B73925C004E1209 /* umeng share */,
-				048DA2571B73604900F7F4E7 /* umeng analytics */,
 				047FF6781B711631004E1209 /* Model */,
 				049C193C1B5D39DE0031A77A /* AppDelegate.swift */,
 				049C193E1B5D39DE0031A77A /* FirstViewController.swift */,
@@ -440,6 +441,16 @@
 				049C19531B5D39DE0031A77A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		261B1C5F1B93FDA100C77B34 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				047FF6831B73925C004E1209 /* umeng share */,
+				048DA2571B73604900F7F4E7 /* umeng analytics */,
+				261B1C601B93FE0100C77B34 /* SwiftyUserDefaults.swift */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 		9E7D9CCB39BABE712C261F54 /* Frameworks */ = {
@@ -635,6 +646,7 @@
 				042433E01B863485008BC750 /* SettingViewController.swift in Sources */,
 				047FF60D1B65DDA1004E1209 /* MovieService.swift in Sources */,
 				047FF6821B7302F3004E1209 /* Player.swift in Sources */,
+				261B1C611B93FE0100C77B34 /* SwiftyUserDefaults.swift in Sources */,
 				049C19411B5D39DE0031A77A /* SecondViewController.swift in Sources */,
 				049C193D1B5D39DE0031A77A /* AppDelegate.swift in Sources */,
 				047FF5F31B6521C0004E1209 /* MovieTableViewCell.swift in Sources */,
