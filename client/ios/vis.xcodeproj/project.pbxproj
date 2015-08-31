@@ -393,26 +393,18 @@
 		049C19391B5D39DE0031A77A /* vis */ = {
 			isa = PBXGroup;
 			children = (
+				261B1C661B94429800C77B34 /* views */,
+				261B1C651B94425A00C77B34 /* controllers */,
+				261B1C641B94422E00C77B34 /* resources */,
 				261B1C5F1B93FDA100C77B34 /* libs */,
-				0421CDE11B84BCCC00125090 /* fonts */,
 				047FF6781B711631004E1209 /* Model */,
 				049C193C1B5D39DE0031A77A /* AppDelegate.swift */,
-				049C193E1B5D39DE0031A77A /* FirstViewController.swift */,
-				049C19401B5D39DE0031A77A /* SecondViewController.swift */,
 				049C19421B5D39DE0031A77A /* Main.storyboard */,
-				049C19451B5D39DE0031A77A /* Images.xcassets */,
 				049C19471B5D39DE0031A77A /* LaunchScreen.xib */,
 				049C193A1B5D39DE0031A77A /* Supporting Files */,
-				047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */,
-				047FF5F41B65237F004E1209 /* MovieTableViewCell.xib */,
 				047FF60A1B65DD10004E1209 /* Settings.swift */,
 				047FF60C1B65DDA1004E1209 /* MovieService.swift */,
 				047FF6401B6A75DB004E1209 /* vis-Bridging-Header.h */,
-				047FF6741B7113A7004E1209 /* CategoryCollectionViewCell.swift */,
-				047FF6751B7113A7004E1209 /* CategoryCollectionViewCell.xib */,
-				047FF67B1B722DD8004E1209 /* MovieViewController.swift */,
-				047FF67D1B726336004E1209 /* CategoryMovieListViewController.swift */,
-				042433DF1B863485008BC750 /* SettingViewController.swift */,
 			);
 			path = vis;
 			sourceTree = "<group>";
@@ -451,6 +443,38 @@
 				047FF6811B7302F3004E1209 /* Player.swift */,
 			);
 			name = libs;
+			sourceTree = "<group>";
+		};
+		261B1C641B94422E00C77B34 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				0421CDE11B84BCCC00125090 /* fonts */,
+				049C19451B5D39DE0031A77A /* Images.xcassets */,
+			);
+			name = resources;
+			sourceTree = "<group>";
+		};
+		261B1C651B94425A00C77B34 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				049C193E1B5D39DE0031A77A /* FirstViewController.swift */,
+				049C19401B5D39DE0031A77A /* SecondViewController.swift */,
+				047FF67B1B722DD8004E1209 /* MovieViewController.swift */,
+				042433DF1B863485008BC750 /* SettingViewController.swift */,
+				047FF67D1B726336004E1209 /* CategoryMovieListViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		261B1C661B94429800C77B34 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */,
+				047FF5F41B65237F004E1209 /* MovieTableViewCell.xib */,
+				047FF6741B7113A7004E1209 /* CategoryCollectionViewCell.swift */,
+				047FF6751B7113A7004E1209 /* CategoryCollectionViewCell.xib */,
+			);
+			name = views;
 			sourceTree = "<group>";
 		};
 		9E7D9CCB39BABE712C261F54 /* Frameworks */ = {
