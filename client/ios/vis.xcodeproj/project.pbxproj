@@ -10,6 +10,7 @@
 		0421CDDA1B84BCC800125090 /* SourceHanSansCN-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0421CDD31B84BCC800125090 /* SourceHanSansCN-Bold.otf */; };
 		0421CDDD1B84BCC800125090 /* SourceHanSansCN-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0421CDD61B84BCC800125090 /* SourceHanSansCN-Light.otf */; };
 		042433E01B863485008BC750 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042433DF1B863485008BC750 /* SettingViewController.swift */; };
+		04611EF01B948C1E00F78CF5 /* ShoucangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */; };
 		047FF5F31B6521C0004E1209 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */; };
 		047FF5F51B65237F004E1209 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047FF5F41B65237F004E1209 /* MovieTableViewCell.xib */; };
 		047FF5F71B65B2AE004E1209 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047FF5F61B65B2AE004E1209 /* CoreGraphics.framework */; };
@@ -84,6 +85,7 @@
 		0421CDD31B84BCC800125090 /* SourceHanSansCN-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansCN-Bold.otf"; sourceTree = "<group>"; };
 		0421CDD61B84BCC800125090 /* SourceHanSansCN-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansCN-Light.otf"; sourceTree = "<group>"; };
 		042433DF1B863485008BC750 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoucangViewController.swift; sourceTree = "<group>"; };
 		047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		047FF5F41B65237F004E1209 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		047FF5F61B65B2AE004E1209 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -232,6 +234,14 @@
 				0421CDD61B84BCC800125090 /* SourceHanSansCN-Light.otf */,
 			);
 			name = fonts;
+			sourceTree = "<group>";
+		};
+		04611EF11B948C8500F78CF5 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				049C19421B5D39DE0031A77A /* Main.storyboard */,
+			);
+			name = storyboards;
 			sourceTree = "<group>";
 		};
 		047FF6781B711631004E1209 /* Model */ = {
@@ -393,13 +403,13 @@
 		049C19391B5D39DE0031A77A /* vis */ = {
 			isa = PBXGroup;
 			children = (
+				04611EF11B948C8500F78CF5 /* storyboards */,
 				261B1C661B94429800C77B34 /* views */,
 				261B1C651B94425A00C77B34 /* controllers */,
 				261B1C641B94422E00C77B34 /* resources */,
 				261B1C5F1B93FDA100C77B34 /* libs */,
 				047FF6781B711631004E1209 /* Model */,
 				049C193C1B5D39DE0031A77A /* AppDelegate.swift */,
-				049C19421B5D39DE0031A77A /* Main.storyboard */,
 				049C19471B5D39DE0031A77A /* LaunchScreen.xib */,
 				049C193A1B5D39DE0031A77A /* Supporting Files */,
 				047FF60A1B65DD10004E1209 /* Settings.swift */,
@@ -462,6 +472,7 @@
 				047FF67B1B722DD8004E1209 /* MovieViewController.swift */,
 				042433DF1B863485008BC750 /* SettingViewController.swift */,
 				047FF67D1B726336004E1209 /* CategoryMovieListViewController.swift */,
+				04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -675,6 +686,7 @@
 				049C193D1B5D39DE0031A77A /* AppDelegate.swift in Sources */,
 				047FF5F31B6521C0004E1209 /* MovieTableViewCell.swift in Sources */,
 				047FF67E1B726337004E1209 /* CategoryMovieListViewController.swift in Sources */,
+				04611EF01B948C1E00F78CF5 /* ShoucangViewController.swift in Sources */,
 				047FF6761B7113A7004E1209 /* CategoryCollectionViewCell.swift in Sources */,
 				049C193F1B5D39DE0031A77A /* FirstViewController.swift in Sources */,
 				047FF60B1B65DD10004E1209 /* Settings.swift in Sources */,

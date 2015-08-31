@@ -59,7 +59,6 @@ class FirstViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     
     func navRightClicked(){
         performSegueWithIdentifier("showSetting", sender: nil)
-        println("navRightClicked")
     }
     
     
@@ -115,7 +114,6 @@ class FirstViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     let movieSegueIdentifier = "ShowMovieSegue"
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        println(segue.identifier)
         if segue.identifier == movieSegueIdentifier {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
                 let movie = movies[indexPath.row]

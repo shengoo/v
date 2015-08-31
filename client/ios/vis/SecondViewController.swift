@@ -64,7 +64,6 @@ class SecondViewController: UIViewController, UICollectionViewDataSource, UIColl
     
     func navRightClicked(){
         performSegueWithIdentifier("showSetting", sender: nil)
-        println("navRightClicked")
     }
     
     func loadCategories(data:NSArray){

@@ -81,6 +81,17 @@ class MovieService {
         }
         Defaults["sc"] = newlist
     }
+    func checkShoucang(movie:Movie)->Bool{
+        var result = false
+        let list = Defaults["sc"].arrayValue
+        for item in list{
+            var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
+            if(a.id == movie.id){
+                return true
+            }
+        }
+        return result
+    }
     func getShoucang()->[Movie]{
         let list = Defaults["sc"].arrayValue
 //        let result:NSMutableArray = NSMutableArray()

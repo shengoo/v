@@ -15,6 +15,9 @@ class MovieViewController: UIViewController {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
     @IBOutlet weak var cateLbl: UILabel!
+    @IBOutlet weak var ScBtn: UIButton!
+    @IBOutlet weak var FxBtn: UIButton!
+    @IBOutlet weak var HcBtn: UIButton!
     
     var service = MovieService()
     
@@ -56,6 +59,17 @@ class MovieViewController: UIViewController {
         singleTap.numberOfTapsRequired = 1
         image.userInteractionEnabled = true
         image.addGestureRecognizer(singleTap)
+        
+        
+        ScBtn.setImage(UIImage(named: "收藏"), forState: UIControlState.Normal)
+        ScBtn.setImage(UIImage(named: "已收藏"), forState: UIControlState.Selected)
+        HcBtn.setImage(UIImage(named: "缓存"), forState: UIControlState.Normal)
+        HcBtn.setImage(UIImage(named: "已缓存"), forState: UIControlState.Selected)
+        
+        if(service.checkShoucang(movie!)){
+            ScBtn.selected = true
+        }
+        
     }
     
     var playerVC:MPMoviePlayerViewController?
@@ -194,7 +208,12 @@ class MovieViewController: UIViewController {
     
 
     @IBAction func Shoucang(sender: UIButton) {
-        
+        sender.selected = !sender.selected
+        if(sender.selected){
+            service.addShoucang(movie!)
+        }else{
+            service.deleteShoucang(movie!)
+        }
     }
 
     
@@ -209,6 +228,7 @@ class MovieViewController: UIViewController {
     }
 
     @IBAction func Huancun(sender: UIButton) {
+        sender.selected = !sender.selected
     }
 
     /*
