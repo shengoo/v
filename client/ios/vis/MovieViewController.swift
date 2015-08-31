@@ -193,6 +193,10 @@ class MovieViewController: UIViewController {
     }
     
 
+    @IBAction func Shoucang(sender: UIButton) {
+        
+    }
+
     
     @IBAction func shareBtnPressed(sender: UIButton) {
         share()
@@ -202,6 +206,9 @@ class MovieViewController: UIViewController {
 //        for item in list {
 //            println(item.title)
 //        }
+    }
+
+    @IBAction func Huancun(sender: UIButton) {
     }
 
     /*

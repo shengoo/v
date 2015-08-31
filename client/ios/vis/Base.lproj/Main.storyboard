@@ -139,12 +139,32 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zeK-IF-eng" userLabel="buttons">
                                                 <rect key="frame" x="16" y="143" width="568" height="22"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrW-Ny-kM9" userLabel="share">
-                                                        <rect key="frame" x="516" y="0.0" width="36" height="22"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Ru-FV-ZBc" userLabel="shoucang">
+                                                        <rect key="frame" x="392" y="0.0" width="50" height="22"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="22" id="0Vo-Cx-OcL"/>
-                                                            <constraint firstAttribute="width" constant="36" id="7XX-fE-GvD"/>
+                                                            <constraint firstAttribute="width" constant="50" id="bbR-1Y-A7D"/>
                                                         </constraints>
+                                                        <state key="normal" image="收藏">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="Shoucang:" destination="4PY-z1-5Uu" eventType="touchUpInside" id="dUh-nI-HjQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGE-hi-LiK" userLabel="huancun">
+                                                        <rect key="frame" x="502" y="0.0" width="50" height="22"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="2m8-Yx-xiB"/>
+                                                        </constraints>
+                                                        <state key="normal" image="缓存">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="Huancun:" destination="4PY-z1-5Uu" eventType="touchUpInside" id="giN-UQ-EcW"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UrW-Ny-kM9" userLabel="share">
+                                                        <rect key="frame" x="453" y="0.0" width="37" height="22"/>
                                                         <fontDescription key="fontDescription" name="SourceHanSansCN-Light" family="Source Han Sans CN" pointSize="13"/>
                                                         <state key="normal" image="分享">
                                                             <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -155,11 +175,15 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="wGE-hi-LiK" firstAttribute="bottom" secondItem="UrW-Ny-kM9" secondAttribute="bottom" id="4QU-jJ-nzK"/>
+                                                    <constraint firstItem="wGE-hi-LiK" firstAttribute="baseline" secondItem="5Ru-FV-ZBc" secondAttribute="baseline" id="6VO-Cw-xR4"/>
+                                                    <constraint firstItem="wGE-hi-LiK" firstAttribute="top" secondItem="zeK-IF-eng" secondAttribute="top" id="Leg-wG-cAW"/>
+                                                    <constraint firstItem="UrW-Ny-kM9" firstAttribute="leading" secondItem="5Ru-FV-ZBc" secondAttribute="trailing" constant="11" id="MQu-Yc-LB4"/>
                                                     <constraint firstAttribute="height" constant="22" id="ecz-on-8tm"/>
-                                                    <constraint firstItem="UrW-Ny-kM9" firstAttribute="top" secondItem="zeK-IF-eng" secondAttribute="top" id="gTi-Qc-vgh"/>
-                                                    <constraint firstAttribute="trailing" secondItem="UrW-Ny-kM9" secondAttribute="trailing" constant="16" id="srF-YR-cBk"/>
+                                                    <constraint firstAttribute="trailing" secondItem="wGE-hi-LiK" secondAttribute="trailing" constant="16" id="lOy-np-mGK"/>
+                                                    <constraint firstItem="wGE-hi-LiK" firstAttribute="leading" secondItem="UrW-Ny-kM9" secondAttribute="trailing" constant="12" id="vhe-pK-9gk"/>
+                                                    <constraint firstItem="wGE-hi-LiK" firstAttribute="top" secondItem="UrW-Ny-kM9" secondAttribute="top" id="zhh-Sb-4fr"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -471,6 +495,8 @@
         <image name="play" width="60" height="60"/>
         <image name="tabbg" width="360" height="44"/>
         <image name="分享" width="37" height="10"/>
+        <image name="收藏" width="36" height="11"/>
+        <image name="缓存" width="37" height="11"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="zVh-ms-iUS"/>
