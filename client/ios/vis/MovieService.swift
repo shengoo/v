@@ -109,7 +109,8 @@ class MovieService {
         var data = NSKeyedArchiver.archivedDataWithRootObject(movie)
         newlist.addObject(data)
         Defaults["hc"] = newlist
-        
+        DownloadHandler.download(movie)
+        println("start download:http://182.92.153.230/file/" + movie.video)
     }
     func deleteHuancun(movie:Movie){
         let list = Defaults["hc"].arrayValue

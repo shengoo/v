@@ -11,6 +11,7 @@
 		0421CDDD1B84BCC800125090 /* SourceHanSansCN-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0421CDD61B84BCC800125090 /* SourceHanSansCN-Light.otf */; };
 		042433E01B863485008BC750 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042433DF1B863485008BC750 /* SettingViewController.swift */; };
 		04611EF01B948C1E00F78CF5 /* ShoucangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */; };
+		04611EFA1B9B312D00F78CF5 /* DownloadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04611EF91B9B312D00F78CF5 /* DownloadHandler.swift */; };
 		047FF5F31B6521C0004E1209 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */; };
 		047FF5F51B65237F004E1209 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047FF5F41B65237F004E1209 /* MovieTableViewCell.xib */; };
 		047FF5F71B65B2AE004E1209 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047FF5F61B65B2AE004E1209 /* CoreGraphics.framework */; };
@@ -86,6 +87,7 @@
 		0421CDD61B84BCC800125090 /* SourceHanSansCN-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansCN-Light.otf"; sourceTree = "<group>"; };
 		042433DF1B863485008BC750 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoucangViewController.swift; sourceTree = "<group>"; };
+		04611EF91B9B312D00F78CF5 /* DownloadHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadHandler.swift; sourceTree = "<group>"; };
 		047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		047FF5F41B65237F004E1209 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		047FF5F61B65B2AE004E1209 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -403,18 +405,19 @@
 		049C19391B5D39DE0031A77A /* vis */ = {
 			isa = PBXGroup;
 			children = (
+				261B1C5F1B93FDA100C77B34 /* libs */,
 				04611EF11B948C8500F78CF5 /* storyboards */,
 				261B1C661B94429800C77B34 /* views */,
 				261B1C651B94425A00C77B34 /* controllers */,
 				261B1C641B94422E00C77B34 /* resources */,
-				261B1C5F1B93FDA100C77B34 /* libs */,
 				047FF6781B711631004E1209 /* Model */,
 				049C193C1B5D39DE0031A77A /* AppDelegate.swift */,
 				049C19471B5D39DE0031A77A /* LaunchScreen.xib */,
-				049C193A1B5D39DE0031A77A /* Supporting Files */,
 				047FF60A1B65DD10004E1209 /* Settings.swift */,
 				047FF60C1B65DDA1004E1209 /* MovieService.swift */,
 				047FF6401B6A75DB004E1209 /* vis-Bridging-Header.h */,
+				049C193A1B5D39DE0031A77A /* Supporting Files */,
+				04611EF91B9B312D00F78CF5 /* DownloadHandler.swift */,
 			);
 			path = vis;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 			files = (
 				047FF60F1B65E000004E1209 /* Movie.swift in Sources */,
 				047FF67C1B722DD8004E1209 /* MovieViewController.swift in Sources */,
+				04611EFA1B9B312D00F78CF5 /* DownloadHandler.swift in Sources */,
 				047FF67A1B711651004E1209 /* Category.swift in Sources */,
 				042433E01B863485008BC750 /* SettingViewController.swift in Sources */,
 				047FF60D1B65DDA1004E1209 /* MovieService.swift in Sources */,
