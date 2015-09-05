@@ -122,6 +122,7 @@ class MovieService {
             }
         }
         Defaults["hc"] = newlist
+        DownloadHandler.deleteMovie(movie)
     }
     func checkHuancun(movie:Movie)->Bool{
         var result = false
@@ -143,5 +144,20 @@ class MovieService {
         }
         return result
     }
+    
+    
+    func checkImageFile(movie:Movie)->Bool{
+        var imageFile = DownloadHandler.getImageUrl(movie)
+        var checkValidation = NSFileManager.defaultManager()
+        return checkValidation.fileExistsAtPath(imageFile.path!)
+    }
+    
+    func checkVideoFile(movie:Movie) -> Bool{
+        var videoFile = DownloadHandler.getVideoUrl(movie)
+        var checkValidation = NSFileManager.defaultManager()
+        return checkValidation.fileExistsAtPath(videoFile.path!)
+        
+    }
+    
     
 }

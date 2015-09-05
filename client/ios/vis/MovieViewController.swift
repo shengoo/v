@@ -35,8 +35,13 @@ class MovieViewController: UIViewController {
         
 //        self.navigationItem.title = movie?.title
         
-        var url = NSURL(string: "http://182.92.153.230/file/" + movie!.image)
-        image.sd_setImageWithURL(url)
+        if(service.checkImageFile(movie!)){
+            image.sd_setImageWithURL(NSURL(fileURLWithPath: DownloadHandler.getImageUrl(movie!).path!))
+        }else{
+            var url = NSURL(string: "http://182.92.153.230/file/" + movie!.image)
+            image.sd_setImageWithURL(url)
+        }
+        
         
         
         self.titleLbl.text = movie?.title
@@ -78,9 +83,16 @@ class MovieViewController: UIViewController {
     var playerVC:MPMoviePlayerViewController?
     
     func playMovie(){
-        var urlStr = "http://182.92.153.230/file/" + movie!.video;
-//        var urlStr = "http://www.sheng00.com/jwplayer/video.mp4"
-        var url = NSURL(string: urlStr)
+        
+        var url:NSURL
+        
+        if(service.checkVideoFile(movie!)){
+            url = NSURL(fileURLWithPath: DownloadHandler.getVideoUrl(movie!).path!)!
+        }else{
+            var urlStr = "http://182.92.153.230/file/" + movie!.video;
+            url = NSURL(string: urlStr)!
+        }
+        
         
         
         playerVC = MPMoviePlayerViewController(contentURL: url)

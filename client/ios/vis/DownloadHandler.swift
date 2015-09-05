@@ -92,5 +92,17 @@ class DownloadHandler{
         }
     }
     
+    static func deleteMovie(movie:Movie){
+        var imagePath = self.getImageUrl(movie).path!
+        if(NSFileManager.defaultManager().fileExistsAtPath(imagePath)){
+            NSFileManager.defaultManager().removeItemAtPath(imagePath, error: nil)
+        }
+        
+        var videoPath = self.getVideoUrl(movie).path!
+        if(NSFileManager.defaultManager().fileExistsAtPath(videoPath)){
+            NSFileManager.defaultManager().removeItemAtPath(videoPath, error: nil)
+        }
+    }
+    
     
 }
