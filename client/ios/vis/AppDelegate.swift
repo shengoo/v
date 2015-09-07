@@ -11,13 +11,6 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    func hidetab(){
-        (self.window?.rootViewController as! UITabBarController).tabBar.hidden = true
-    }
-    
-    func showtab(){
-        (self.window?.rootViewController as! UITabBarController).tabBar.hidden = false
-    }
     
     var umengKey = "55c32328e0f55ae881000579"
 
@@ -28,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-//        UIApplication.sharedApplication().statusBarStyle = .LightContent
         
         MobClick.startWithAppkey(umengKey)
         UMSocialData.setAppKey(umengKey)

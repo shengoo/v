@@ -11,6 +11,7 @@
 		0421CDDD1B84BCC800125090 /* SourceHanSansCN-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0421CDD61B84BCC800125090 /* SourceHanSansCN-Light.otf */; };
 		042433E01B863485008BC750 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042433DF1B863485008BC750 /* SettingViewController.swift */; };
 		0439B23F1B9D676A00B61C4F /* HuancunViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439B23E1B9D676A00B61C4F /* HuancunViewController.swift */; };
+		0439B2411B9D781E00B61C4F /* IJReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439B2401B9D781E00B61C4F /* IJReachability.swift */; };
 		04611EF01B948C1E00F78CF5 /* ShoucangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */; };
 		04611EFA1B9B312D00F78CF5 /* DownloadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04611EF91B9B312D00F78CF5 /* DownloadHandler.swift */; };
 		047FF5F31B6521C0004E1209 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */; };
@@ -88,6 +89,7 @@
 		0421CDD61B84BCC800125090 /* SourceHanSansCN-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansCN-Light.otf"; sourceTree = "<group>"; };
 		042433DF1B863485008BC750 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		0439B23E1B9D676A00B61C4F /* HuancunViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HuancunViewController.swift; sourceTree = "<group>"; };
+		0439B2401B9D781E00B61C4F /* IJReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJReachability.swift; sourceTree = "<group>"; };
 		04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoucangViewController.swift; sourceTree = "<group>"; };
 		04611EF91B9B312D00F78CF5 /* DownloadHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadHandler.swift; sourceTree = "<group>"; };
 		047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
@@ -456,6 +458,7 @@
 				048DA2571B73604900F7F4E7 /* umeng analytics */,
 				261B1C601B93FE0100C77B34 /* SwiftyUserDefaults.swift */,
 				047FF6811B7302F3004E1209 /* Player.swift */,
+				0439B2401B9D781E00B61C4F /* IJReachability.swift */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -690,6 +693,7 @@
 				047FF6821B7302F3004E1209 /* Player.swift in Sources */,
 				261B1C611B93FE0100C77B34 /* SwiftyUserDefaults.swift in Sources */,
 				049C19411B5D39DE0031A77A /* SecondViewController.swift in Sources */,
+				0439B2411B9D781E00B61C4F /* IJReachability.swift in Sources */,
 				049C193D1B5D39DE0031A77A /* AppDelegate.swift in Sources */,
 				047FF5F31B6521C0004E1209 /* MovieTableViewCell.swift in Sources */,
 				047FF67E1B726337004E1209 /* CategoryMovieListViewController.swift in Sources */,

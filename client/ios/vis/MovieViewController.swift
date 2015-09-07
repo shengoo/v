@@ -60,7 +60,7 @@ class MovieViewController: UIViewController {
 //        descLbl.frame = CGRectMake(0, 0, 200, 600)
 //        descLbl.sizeToFit()
         
-        let singleTap = UITapGestureRecognizer(target: self, action: "playMovie")
+        let singleTap = UITapGestureRecognizer(target: self, action: "willPlay")
         singleTap.numberOfTapsRequired = 1
         image.userInteractionEnabled = true
         image.addGestureRecognizer(singleTap)
@@ -78,6 +78,47 @@ class MovieViewController: UIViewController {
             HcBtn.selected = true
         }
         
+    }
+    
+    func willPlay(){
+        let statusType = IJReachability.isConnectedToNetworkOfType()
+        switch statusType{
+        case .WWAN:
+            println("连接类型：移动网络")
+            var alert = UIAlertController(title: "警告", message: "正在使用移动网络，是否继续播放", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(
+                UIAlertAction(title: "是",
+                    style: UIAlertActionStyle.Default,
+                    handler: { action in
+                        self.playMovie()
+                    }
+                )
+            )
+            alert.addAction(
+                UIAlertAction(title: "取消",
+                    style: UIAlertActionStyle.Cancel,
+                    handler: { action in
+                        
+                    }
+                )
+            )
+            presentViewController(alert, animated: true, completion: {})
+        
+        case .WiFi:
+            playMovie()
+        case .NotConnected:
+            println("连接类型：没有网络连接")
+            var alert = UIAlertController(title: "没有网络连接", message: "请连接网络后重试", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(
+                UIAlertAction(title: "OK",
+                    style: UIAlertActionStyle.Default,
+                    handler: { action in
+                    }
+                )
+            )
+            presentViewController(alert, animated: true, completion: {})
+        }
+
     }
     
     var playerVC:MPMoviePlayerViewController?
