@@ -12,8 +12,17 @@
             <string>SourceHanSansCN-Bold</string>
             <string>SourceHanSansCN-Bold</string>
             <string>SourceHanSansCN-Bold</string>
+            <string>SourceHanSansCN-Bold</string>
         </mutableArray>
         <mutableArray key="SourceHanSansCN-Light.otf">
+            <string>SourceHanSansCN-Light</string>
+            <string>SourceHanSansCN-Light</string>
+            <string>SourceHanSansCN-Light</string>
+            <string>SourceHanSansCN-Light</string>
+            <string>SourceHanSansCN-Light</string>
+            <string>SourceHanSansCN-Light</string>
+            <string>SourceHanSansCN-Light</string>
+            <string>SourceHanSansCN-Light</string>
             <string>SourceHanSansCN-Light</string>
             <string>SourceHanSansCN-Light</string>
             <string>SourceHanSansCN-Light</string>
@@ -610,7 +619,7 @@
         <!--功能开关-->
         <scene sceneID="nZZ-Vd-pgg">
             <objects>
-                <viewController id="hv8-94-IBB" userLabel="功能开关" sceneMemberID="viewController">
+                <viewController id="hv8-94-IBB" userLabel="功能开关" customClass="SwitchViewController" customModule="微爱视" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aUs-5S-UyS"/>
                         <viewControllerLayoutGuide type="bottom" id="ceN-U8-zM1"/>
@@ -621,23 +630,188 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-hj-M3e" userLabel="row1">
                                 <rect key="frame" x="0.0" y="64" width="600" height="96"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="功能开关" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDQ-jv-QO4">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSansCN-Bold" family="Source Han Sans CN" pointSize="22"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="GDQ-jv-QO4" firstAttribute="top" secondItem="Iav-hj-M3e" secondAttribute="top" id="1VG-v0-ghM"/>
+                                    <constraint firstAttribute="trailing" secondItem="GDQ-jv-QO4" secondAttribute="trailing" id="4aB-Tl-k3h"/>
+                                    <constraint firstItem="GDQ-jv-QO4" firstAttribute="leading" secondItem="Iav-hj-M3e" secondAttribute="leading" id="Jde-TD-g7w"/>
+                                    <constraint firstAttribute="bottom" secondItem="GDQ-jv-QO4" secondAttribute="bottom" id="MhO-7u-UKN"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDM-ik-D5A" userLabel="row2">
                                 <rect key="frame" x="0.0" y="160" width="600" height="96"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用流量时提醒我" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbx-qo-u1t">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSansCN-Light" family="Source Han Sans CN" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0W8-bo-DUT">
+                                        <rect key="frame" x="210" y="38" width="180" height="57.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1N-Cd-ecl">
+                                                <rect key="frame" x="8" y="14" width="50" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="G6M-sA-Dod"/>
+                                                    <constraint firstAttribute="height" constant="30" id="jTG-fm-dyG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SourceHanSansCN-Light" family="Source Han Sans CN" pointSize="18"/>
+                                                <state key="normal" title="打开">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="WifiOpenClick:" destination="hv8-94-IBB" eventType="touchUpInside" id="RKm-VI-0eR"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeA-Tt-p3t">
+                                                <rect key="frame" x="122" y="14" width="50" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Qck-UA-7Ck"/>
+                                                    <constraint firstAttribute="height" constant="30" id="vlg-2F-FK4"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SourceHanSansCN-Light" family="Source Han Sans CN" pointSize="18"/>
+                                                <state key="normal" title="关闭">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="WifiCloseClick:" destination="hv8-94-IBB" eventType="touchUpInside" id="JwC-fF-Zbc"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="O1N-Cd-ecl" firstAttribute="leading" secondItem="0W8-bo-DUT" secondAttribute="leadingMargin" id="4NG-LY-qJJ"/>
+                                            <constraint firstItem="MeA-Tt-p3t" firstAttribute="centerY" secondItem="0W8-bo-DUT" secondAttribute="centerY" constant="0.25" id="OgT-GO-7h6"/>
+                                            <constraint firstItem="MeA-Tt-p3t" firstAttribute="trailing" secondItem="0W8-bo-DUT" secondAttribute="trailingMargin" id="ZdD-i1-Pta"/>
+                                            <constraint firstItem="O1N-Cd-ecl" firstAttribute="centerY" secondItem="0W8-bo-DUT" secondAttribute="centerY" id="qKI-Vx-XSK"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Mbx-qo-u1t" firstAttribute="height" secondItem="zDM-ik-D5A" secondAttribute="height" multiplier="0.4" id="5aT-hq-8b2" userLabel="label height"/>
+                                    <constraint firstItem="Mbx-qo-u1t" firstAttribute="trailing" secondItem="zDM-ik-D5A" secondAttribute="trailing" id="HmO-Kv-rTc" userLabel="label trailing"/>
+                                    <constraint firstItem="0W8-bo-DUT" firstAttribute="top" secondItem="Mbx-qo-u1t" secondAttribute="bottom" id="O7O-Jp-Cu9" userLabel="view top"/>
+                                    <constraint firstItem="0W8-bo-DUT" firstAttribute="width" secondItem="zDM-ik-D5A" secondAttribute="width" multiplier="0.3" id="Wro-K7-2zk" userLabel="view width"/>
+                                    <constraint firstItem="0W8-bo-DUT" firstAttribute="height" secondItem="zDM-ik-D5A" secondAttribute="height" multiplier="0.6" id="cVt-Dc-nJG" userLabel="view height"/>
+                                    <constraint firstItem="Mbx-qo-u1t" firstAttribute="top" secondItem="zDM-ik-D5A" secondAttribute="top" id="fof-x3-Z3v" userLabel="label top"/>
+                                    <constraint firstItem="Mbx-qo-u1t" firstAttribute="leading" secondItem="zDM-ik-D5A" secondAttribute="leading" id="uVg-li-5BI" userLabel="label leading"/>
+                                    <constraint firstItem="0W8-bo-DUT" firstAttribute="centerX" secondItem="zDM-ik-D5A" secondAttribute="centerX" id="vuA-AD-oto" userLabel="view x center"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JU-vF-JbG" userLabel="row3">
-                                <rect key="frame" x="0.0" y="256" width="600" height="96"/>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="256" width="600" height="0.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTa-fn-Ur6">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSansCN-Light" family="Source Han Sans CN" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4q-Mx-4hf">
+                                        <rect key="frame" x="150" y="24" width="300" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="jTa-fn-Ur6" firstAttribute="trailing" secondItem="5JU-vF-JbG" secondAttribute="trailing" id="6fZ-Xd-Tg0" userLabel="label trailing"/>
+                                    <constraint firstItem="jTa-fn-Ur6" firstAttribute="top" secondItem="5JU-vF-JbG" secondAttribute="top" id="Sgj-I4-F9x" userLabel="label top"/>
+                                    <constraint firstItem="jTa-fn-Ur6" firstAttribute="leading" secondItem="5JU-vF-JbG" secondAttribute="leading" id="cB4-RP-BZJ" userLabel="label leading"/>
+                                    <constraint firstItem="jTa-fn-Ur6" firstAttribute="height" secondItem="5JU-vF-JbG" secondAttribute="height" multiplier="0.4" id="u8i-dm-yhp" userLabel="label height"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mb-ia-3Z8" userLabel="row4">
-                                <rect key="frame" x="0.0" y="352" width="600" height="96"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="frame" x="0.0" y="256" width="600" height="96"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自动缓存已收藏的视频" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fnU-bt-gdG">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSansCN-Light" family="Source Han Sans CN" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G3p-Ld-Zfz">
+                                        <rect key="frame" x="210" y="38" width="180" height="57.5"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqp-SD-ocb">
+                                                <rect key="frame" x="8" y="14" width="50" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="ohy-ZZ-Nqq"/>
+                                                    <constraint firstAttribute="width" constant="50" id="sa8-bc-p5T"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SourceHanSansCN-Light" family="Source Han Sans CN" pointSize="18"/>
+                                                <state key="normal" title="打开">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="AutoOpenClick:" destination="hv8-94-IBB" eventType="touchUpInside" id="OtO-b5-pbU"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u7o-Ek-GCz">
+                                                <rect key="frame" x="122" y="14" width="50" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="Lqi-S5-A1i"/>
+                                                    <constraint firstAttribute="height" constant="30" id="jr4-SQ-TJt"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="SourceHanSansCN-Light" family="Source Han Sans CN" pointSize="18"/>
+                                                <state key="normal" title="关闭">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="AutoCloseClick:" destination="hv8-94-IBB" eventType="touchUpInside" id="hhO-eZ-cc2"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="u7o-Ek-GCz" firstAttribute="trailing" secondItem="G3p-Ld-Zfz" secondAttribute="trailingMargin" id="DoZ-Ve-wjB"/>
+                                            <constraint firstItem="jqp-SD-ocb" firstAttribute="centerY" secondItem="G3p-Ld-Zfz" secondAttribute="centerY" id="Xbm-Ss-78I"/>
+                                            <constraint firstItem="jqp-SD-ocb" firstAttribute="leading" secondItem="G3p-Ld-Zfz" secondAttribute="leadingMargin" id="gJa-sS-M9e"/>
+                                            <constraint firstItem="u7o-Ek-GCz" firstAttribute="centerY" secondItem="G3p-Ld-Zfz" secondAttribute="centerY" id="ldD-WL-X1L"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fnU-bt-gdG" firstAttribute="trailing" secondItem="4Mb-ia-3Z8" secondAttribute="trailing" id="6t7-mO-hoz" userLabel="label trailing"/>
+                                    <constraint firstItem="G3p-Ld-Zfz" firstAttribute="top" secondItem="fnU-bt-gdG" secondAttribute="bottom" id="AA8-jx-dir"/>
+                                    <constraint firstItem="G3p-Ld-Zfz" firstAttribute="width" secondItem="4Mb-ia-3Z8" secondAttribute="width" multiplier="0.3" id="Kab-pi-0hL"/>
+                                    <constraint firstItem="fnU-bt-gdG" firstAttribute="top" secondItem="4Mb-ia-3Z8" secondAttribute="top" id="MgE-AB-jcZ" userLabel="label top"/>
+                                    <constraint firstItem="fnU-bt-gdG" firstAttribute="height" secondItem="4Mb-ia-3Z8" secondAttribute="height" multiplier="0.4" id="VDh-5l-vEQ" userLabel="label height"/>
+                                    <constraint firstItem="G3p-Ld-Zfz" firstAttribute="height" secondItem="4Mb-ia-3Z8" secondAttribute="height" multiplier="0.6" id="oMU-p3-eph"/>
+                                    <constraint firstItem="fnU-bt-gdG" firstAttribute="leading" secondItem="4Mb-ia-3Z8" secondAttribute="leading" id="sg1-kb-Vri" userLabel="label leading"/>
+                                    <constraint firstItem="G3p-Ld-Zfz" firstAttribute="centerX" secondItem="4Mb-ia-3Z8" secondAttribute="centerX" id="yeJ-LX-Co7"/>
+                                </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huL-Hq-25k" userLabel="row5">
-                                <rect key="frame" x="0.0" y="448" width="600" height="96"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="352" width="600" height="96"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fz-mQ-Thb">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
+                                        <fontDescription key="fontDescription" name="SourceHanSansCN-Light" family="Source Han Sans CN" pointSize="18"/>
+                                        <state key="normal" title="清除所有缓存">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="ClearAllCache:" destination="hv8-94-IBB" eventType="touchUpInside" id="Tyf-eq-ikm"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="9fz-mQ-Thb" secondAttribute="bottom" id="7kc-Wm-rNd"/>
+                                    <constraint firstAttribute="trailing" secondItem="9fz-mQ-Thb" secondAttribute="trailing" id="Csg-TG-KKi"/>
+                                    <constraint firstItem="9fz-mQ-Thb" firstAttribute="top" secondItem="huL-Hq-25k" secondAttribute="top" id="eIA-5h-4t6"/>
+                                    <constraint firstItem="9fz-mQ-Thb" firstAttribute="leading" secondItem="huL-Hq-25k" secondAttribute="leading" id="tcE-sx-RbV"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -658,12 +832,18 @@
                             <constraint firstItem="4Mb-ia-3Z8" firstAttribute="height" secondItem="yuA-ah-RoO" secondAttribute="height" multiplier="0.16" id="dPT-fs-ByH" userLabel="row4"/>
                             <constraint firstItem="huL-Hq-25k" firstAttribute="trailing" secondItem="yuA-ah-RoO" secondAttribute="trailing" id="edX-h6-2Lh" userLabel="row5 trailing"/>
                             <constraint firstItem="Iav-hj-M3e" firstAttribute="leading" secondItem="yuA-ah-RoO" secondAttribute="leading" id="g03-3J-bIs" userLabel="row1 leading"/>
-                            <constraint firstItem="5JU-vF-JbG" firstAttribute="height" secondItem="yuA-ah-RoO" secondAttribute="height" multiplier="0.16" id="iTb-rQ-G8D" userLabel="row3"/>
+                            <constraint firstItem="5JU-vF-JbG" firstAttribute="height" secondItem="yuA-ah-RoO" secondAttribute="height" multiplier="0.001" id="iTb-rQ-G8D" userLabel="row3"/>
                             <constraint firstItem="5JU-vF-JbG" firstAttribute="trailing" secondItem="yuA-ah-RoO" secondAttribute="trailing" id="myH-ZP-R2P" userLabel="row3"/>
                             <constraint firstItem="zDM-ik-D5A" firstAttribute="leading" secondItem="yuA-ah-RoO" secondAttribute="leading" id="pCH-MJ-lsJ" userLabel="row2"/>
                             <constraint firstItem="Iav-hj-M3e" firstAttribute="top" secondItem="aUs-5S-UyS" secondAttribute="bottom" id="pjT-IE-wiq" userLabel="row1 top"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="WifiClose" destination="MeA-Tt-p3t" id="m4A-4Y-EOL"/>
+                        <outlet property="WifiOpen" destination="O1N-Cd-ecl" id="BCa-Ex-iUy"/>
+                        <outlet property="autoClose" destination="u7o-Ek-GCz" id="M3N-XR-XPT"/>
+                        <outlet property="autoOpen" destination="jqp-SD-ocb" id="SZ3-Ch-bZb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BeC-mU-7GB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

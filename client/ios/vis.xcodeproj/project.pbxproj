@@ -14,6 +14,7 @@
 		0439B2411B9D781E00B61C4F /* IJReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0439B2401B9D781E00B61C4F /* IJReachability.swift */; };
 		04611EF01B948C1E00F78CF5 /* ShoucangViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */; };
 		04611EFA1B9B312D00F78CF5 /* DownloadHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04611EF91B9B312D00F78CF5 /* DownloadHandler.swift */; };
+		04767B8D1B9F184D00C7BE34 /* SwitchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04767B8C1B9F184D00C7BE34 /* SwitchViewController.swift */; };
 		047FF5F31B6521C0004E1209 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */; };
 		047FF5F51B65237F004E1209 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 047FF5F41B65237F004E1209 /* MovieTableViewCell.xib */; };
 		047FF5F71B65B2AE004E1209 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047FF5F61B65B2AE004E1209 /* CoreGraphics.framework */; };
@@ -92,6 +93,7 @@
 		0439B2401B9D781E00B61C4F /* IJReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJReachability.swift; sourceTree = "<group>"; };
 		04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoucangViewController.swift; sourceTree = "<group>"; };
 		04611EF91B9B312D00F78CF5 /* DownloadHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloadHandler.swift; sourceTree = "<group>"; };
+		04767B8C1B9F184D00C7BE34 /* SwitchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchViewController.swift; sourceTree = "<group>"; };
 		047FF5F21B6521C0004E1209 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		047FF5F41B65237F004E1209 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		047FF5F61B65B2AE004E1209 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -482,6 +484,7 @@
 				047FF67D1B726336004E1209 /* CategoryMovieListViewController.swift */,
 				04611EEF1B948C1E00F78CF5 /* ShoucangViewController.swift */,
 				0439B23E1B9D676A00B61C4F /* HuancunViewController.swift */,
+				04767B8C1B9F184D00C7BE34 /* SwitchViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -692,6 +695,7 @@
 				047FF60D1B65DDA1004E1209 /* MovieService.swift in Sources */,
 				047FF6821B7302F3004E1209 /* Player.swift in Sources */,
 				261B1C611B93FE0100C77B34 /* SwiftyUserDefaults.swift in Sources */,
+				04767B8D1B9F184D00C7BE34 /* SwitchViewController.swift in Sources */,
 				049C19411B5D39DE0031A77A /* SecondViewController.swift in Sources */,
 				0439B2411B9D781E00B61C4F /* IJReachability.swift in Sources */,
 				049C193D1B5D39DE0031A77A /* AppDelegate.swift in Sources */,
