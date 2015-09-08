@@ -458,6 +458,9 @@
                                         <state key="normal" title="功能开关">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="hv8-94-IBB" kind="show" id="gko-yg-Jkt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -603,6 +606,68 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJh-sG-CfV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="622" y="1610"/>
+        </scene>
+        <!--功能开关-->
+        <scene sceneID="nZZ-Vd-pgg">
+            <objects>
+                <viewController id="hv8-94-IBB" userLabel="功能开关" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aUs-5S-UyS"/>
+                        <viewControllerLayoutGuide type="bottom" id="ceN-U8-zM1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yuA-ah-RoO">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iav-hj-M3e" userLabel="row1">
+                                <rect key="frame" x="0.0" y="64" width="600" height="96"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDM-ik-D5A" userLabel="row2">
+                                <rect key="frame" x="0.0" y="160" width="600" height="96"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JU-vF-JbG" userLabel="row3">
+                                <rect key="frame" x="0.0" y="256" width="600" height="96"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Mb-ia-3Z8" userLabel="row4">
+                                <rect key="frame" x="0.0" y="352" width="600" height="96"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="huL-Hq-25k" userLabel="row5">
+                                <rect key="frame" x="0.0" y="448" width="600" height="96"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="zDM-ik-D5A" firstAttribute="top" secondItem="Iav-hj-M3e" secondAttribute="bottom" id="4f5-ke-nXY" userLabel="row2"/>
+                            <constraint firstItem="huL-Hq-25k" firstAttribute="leading" secondItem="yuA-ah-RoO" secondAttribute="leading" id="64j-VS-Zv5" userLabel="row5 leading"/>
+                            <constraint firstItem="Iav-hj-M3e" firstAttribute="height" secondItem="yuA-ah-RoO" secondAttribute="height" multiplier="0.16" id="7Sz-wL-2zv" userLabel="row1 height"/>
+                            <constraint firstItem="4Mb-ia-3Z8" firstAttribute="top" secondItem="5JU-vF-JbG" secondAttribute="bottom" id="7gx-Ww-f8G" userLabel="row4"/>
+                            <constraint firstItem="Iav-hj-M3e" firstAttribute="trailing" secondItem="yuA-ah-RoO" secondAttribute="trailing" id="9gY-X5-Qud" userLabel="row1 trailing"/>
+                            <constraint firstItem="5JU-vF-JbG" firstAttribute="top" secondItem="zDM-ik-D5A" secondAttribute="bottom" id="ITp-Ta-Qb1" userLabel="row3"/>
+                            <constraint firstItem="huL-Hq-25k" firstAttribute="top" secondItem="4Mb-ia-3Z8" secondAttribute="bottom" id="OIQ-Rd-P36" userLabel="row5 top"/>
+                            <constraint firstItem="4Mb-ia-3Z8" firstAttribute="trailing" secondItem="yuA-ah-RoO" secondAttribute="trailing" id="PzQ-lU-d0c" userLabel="row4"/>
+                            <constraint firstItem="5JU-vF-JbG" firstAttribute="leading" secondItem="yuA-ah-RoO" secondAttribute="leading" id="RkH-8X-EsX" userLabel="row3"/>
+                            <constraint firstItem="zDM-ik-D5A" firstAttribute="trailing" secondItem="yuA-ah-RoO" secondAttribute="trailing" id="Rpi-Lb-DVH" userLabel="row2"/>
+                            <constraint firstItem="4Mb-ia-3Z8" firstAttribute="leading" secondItem="yuA-ah-RoO" secondAttribute="leading" id="Rqh-dW-N2w" userLabel="row4"/>
+                            <constraint firstItem="zDM-ik-D5A" firstAttribute="height" secondItem="yuA-ah-RoO" secondAttribute="height" multiplier="0.16" id="V9F-qc-hNQ" userLabel="row2"/>
+                            <constraint firstItem="huL-Hq-25k" firstAttribute="height" secondItem="yuA-ah-RoO" secondAttribute="height" multiplier="0.16" id="ahX-Mo-9Lp" userLabel="row5 height"/>
+                            <constraint firstItem="4Mb-ia-3Z8" firstAttribute="height" secondItem="yuA-ah-RoO" secondAttribute="height" multiplier="0.16" id="dPT-fs-ByH" userLabel="row4"/>
+                            <constraint firstItem="huL-Hq-25k" firstAttribute="trailing" secondItem="yuA-ah-RoO" secondAttribute="trailing" id="edX-h6-2Lh" userLabel="row5 trailing"/>
+                            <constraint firstItem="Iav-hj-M3e" firstAttribute="leading" secondItem="yuA-ah-RoO" secondAttribute="leading" id="g03-3J-bIs" userLabel="row1 leading"/>
+                            <constraint firstItem="5JU-vF-JbG" firstAttribute="height" secondItem="yuA-ah-RoO" secondAttribute="height" multiplier="0.16" id="iTb-rQ-G8D" userLabel="row3"/>
+                            <constraint firstItem="5JU-vF-JbG" firstAttribute="trailing" secondItem="yuA-ah-RoO" secondAttribute="trailing" id="myH-ZP-R2P" userLabel="row3"/>
+                            <constraint firstItem="zDM-ik-D5A" firstAttribute="leading" secondItem="yuA-ah-RoO" secondAttribute="leading" id="pCH-MJ-lsJ" userLabel="row2"/>
+                            <constraint firstItem="Iav-hj-M3e" firstAttribute="top" secondItem="aUs-5S-UyS" secondAttribute="bottom" id="pjT-IE-wiq" userLabel="row1 top"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BeC-mU-7GB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1358" y="1466"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="VlX-gh-fpk">
