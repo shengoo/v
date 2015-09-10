@@ -85,24 +85,29 @@ class MovieViewController: UIViewController {
         switch statusType{
         case .WWAN:
             println("连接类型：移动网络")
-            var alert = UIAlertController(title: "警告", message: "正在使用移动网络，是否继续播放", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(
-                UIAlertAction(title: "是",
-                    style: UIAlertActionStyle.Default,
-                    handler: { action in
-                        self.playMovie()
-                    }
+            if(Settings.shouldAlert()){
+                
+                var alert = UIAlertController(title: "警告", message: "正在使用移动网络，是否继续播放", preferredStyle: UIAlertControllerStyle.Alert)
+                alert.addAction(
+                    UIAlertAction(title: "是",
+                        style: UIAlertActionStyle.Default,
+                        handler: { action in
+                            self.playMovie()
+                        }
+                    )
                 )
-            )
-            alert.addAction(
-                UIAlertAction(title: "取消",
-                    style: UIAlertActionStyle.Cancel,
-                    handler: { action in
-                        
-                    }
+                alert.addAction(
+                    UIAlertAction(title: "取消",
+                        style: UIAlertActionStyle.Cancel,
+                        handler: { action in
+                            
+                        }
+                    )
                 )
-            )
-            presentViewController(alert, animated: true, completion: {})
+                presentViewController(alert, animated: true, completion: {})
+            }else{
+                self.playMovie()
+            }
         
         case .WiFi:
             playMovie()

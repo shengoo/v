@@ -31,9 +31,22 @@ class SwitchViewController: UIViewController {
         autoClose.setTitleColor(UIColor.blackColor(), forState: .Selected)
         autoClose.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
         
-        WifiOpen.selected = !WifiOpen.selected
-        autoOpen.selected = !autoOpen.selected
-        // Do any additional setup after loading the view.
+        if(Settings.shouldAlert()){
+            WifiOpen.selected = true
+            WifiClose.selected = false
+        }else{
+            WifiOpen.selected = false
+            WifiClose.selected = true
+        }
+        
+        if(Settings.shouldAutoCache()){
+            autoOpen.selected = true
+            autoClose.selected = false
+        }else{
+            autoOpen.selected = false
+            autoClose.selected = true
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +58,7 @@ class SwitchViewController: UIViewController {
         if(WifiOpen.selected){
             return
         }
+        Settings.setWifiAlert(true)
         WifiOpen.selected = !WifiOpen.selected
         WifiClose.selected = !WifiClose.selected
     }
@@ -53,6 +67,7 @@ class SwitchViewController: UIViewController {
         if(WifiClose.selected){
             return
         }
+        Settings.setWifiAlert(false)
         WifiClose.selected = !WifiClose.selected
         WifiOpen.selected = !WifiOpen.selected
     }
@@ -62,6 +77,7 @@ class SwitchViewController: UIViewController {
         if(autoOpen.selected){
             return
         }
+        Settings.setAutoCache(true)
         autoOpen.selected = !autoOpen.selected
         autoClose.selected = !autoClose.selected
     }
@@ -70,6 +86,7 @@ class SwitchViewController: UIViewController {
         if(autoClose.selected){
             return
         }
+        Settings.setAutoCache(false)
         autoClose.selected = !autoClose.selected
         autoOpen.selected = !autoOpen.selected
     }
@@ -77,7 +94,17 @@ class SwitchViewController: UIViewController {
     
     
     @IBAction func ClearAllCache(sender: UIButton) {
-        
+        DownloadHandler.clearCache()
+        var alert = UIAlertController(title: "提示", message: "缓存清除成功", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(
+            UIAlertAction(title: "OK",
+                style: UIAlertActionStyle.Default,
+                handler: { action in
+                }
+            )
+        )
+        presentViewController(alert, animated: true, completion: {})
+
     }
 
     /*

@@ -50,14 +50,6 @@ class MovieService {
             }
         )
         
-//        println(callback)
-//        let task = NSURLSession.sharedSession().dataTaskWithURL(nsurl!, completionHandler: {
-//            (data,response,error) in
-//            var error:NSError?
-//            var response = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSArray
-//            callback(response)
-//        })
-//        task.resume()
     }
     
     func addShoucang(movie:Movie){
@@ -66,7 +58,8 @@ class MovieService {
         var data = NSKeyedArchiver.archivedDataWithRootObject(movie)
         newlist.addObject(data)
         Defaults["sc"] = newlist
-        
+        self.addHuancun(movie)
+        DownloadHandler.startAutoCache()
     }
     func deleteShoucang(movie:Movie){
         let list = Defaults["sc"].arrayValue
@@ -78,6 +71,7 @@ class MovieService {
             }
         }
         Defaults["sc"] = newlist
+        DownloadHandler.startAutoCache()
     }
     func checkShoucang(movie:Movie)->Bool{
         var result = false
@@ -110,7 +104,6 @@ class MovieService {
         newlist.addObject(data)
         Defaults["hc"] = newlist
         DownloadHandler.download(movie)
-        println("start download:http://182.92.153.230/file/" + movie.video)
     }
     func deleteHuancun(movie:Movie){
         let list = Defaults["hc"].arrayValue
@@ -121,18 +114,24 @@ class MovieService {
                 newlist.removeObject(item)
             }
         }
+        self.deleteCachedMovie(movie)
         Defaults["hc"] = newlist
         DownloadHandler.deleteMovie(movie)
     }
     func checkHuancun(movie:Movie)->Bool{
         var result = false
         let list = Defaults["hc"].arrayValue
-        for item in list{
-            var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
-            if(a.id == movie.id){
-                return true
-            }
+        
+        if(checkVideoFile(movie) && checkImageFile(movie)){
+            return true
         }
+        
+//        for item in list{
+//            var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
+//            if(a.id == movie.id){
+//                return true
+//            }
+//        }
         return result
     }
     func getHuancun()->[Movie]{
@@ -140,7 +139,9 @@ class MovieService {
         var result = [Movie]()
         for item in list{
             var a = NSKeyedUnarchiver.unarchiveObjectWithData(item as! NSData) as! Movie
-            result.append(a)
+            if(checkVideoFile(a) && checkImageFile(a)){
+                result.append(a)
+            }
         }
         return result
     }
@@ -158,6 +159,18 @@ class MovieService {
         return checkValidation.fileExistsAtPath(videoFile.path!)
         
     }
+    
+    func deleteCachedMovie(movie:Movie){
+        var videoFile = DownloadHandler.getVideoUrl(movie)
+        if(NSFileManager.defaultManager().fileExistsAtPath(videoFile.path!)){
+            NSFileManager.defaultManager().removeItemAtPath(videoFile.path!, error: nil)
+        }
+        var imageFile = DownloadHandler.getImageUrl(movie)
+        if(NSFileManager.defaultManager().fileExistsAtPath(imageFile.path!)){
+            NSFileManager.defaultManager().removeItemAtPath(imageFile.path!, error: nil)
+        }
+    }
+    
     
     
 }
