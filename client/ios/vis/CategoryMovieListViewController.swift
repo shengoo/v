@@ -18,6 +18,8 @@ class CategoryMovieListViewController: UIViewController ,UITableViewDelegate, UI
     var movies = [Movie]()
     
     var service:MovieService!
+    
+    var refreshControl:UIRefreshControl!
 
 
     override func viewDidLoad() {
@@ -30,11 +32,22 @@ class CategoryMovieListViewController: UIViewController ,UITableViewDelegate, UI
         tableView.registerNib(nib, forCellReuseIdentifier: "cell")
         
         
+        refreshControl = UIRefreshControl()
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         
         service = MovieService()
         service.getByCategory(category!.name, callback: {
             (response) in
             self.loadMovies(response)
+        })
+    }
+    
+    func refresh(){
+        service.getByCategory(category!.name, callback: {
+            (response) in
+            self.loadMovies(response)
+            self.refreshControl.endRefreshing()
         })
     }
     

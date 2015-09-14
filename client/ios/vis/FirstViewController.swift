@@ -17,6 +17,8 @@ class FirstViewController: UIViewController ,UITableViewDelegate, UITableViewDat
     
     var service:MovieService!
     
+    var refreshControl:UIRefreshControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,10 @@ class FirstViewController: UIViewController ,UITableViewDelegate, UITableViewDat
         
         tableView.registerNib(nib, forCellReuseIdentifier: "cell")
 
-
+        
+        refreshControl = UIRefreshControl()
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         
         service = MovieService()
         service.getAll({
@@ -47,6 +52,14 @@ class FirstViewController: UIViewController ,UITableViewDelegate, UITableViewDat
             self.loadMovies(response)
         })
         
+    }
+    
+    func refresh(){
+        service.getAll({
+            (response) in
+            self.loadMovies(response)
+            self.refreshControl.endRefreshing()
+        })
     }
     
     override func viewWillAppear(animated: Bool){
