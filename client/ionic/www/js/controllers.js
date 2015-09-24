@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('movies',function($scope,service){
+.controller('movies',['$scope','service',function($scope,service){
   service.getAll().then(
     function(response){
       $scope.movies = response.data;
@@ -9,7 +9,7 @@ angular.module('starter.controllers', [])
       console.log(response);
     }
   );
-})
+}])
 
 .controller('DashCtrl', function($scope) {})
 

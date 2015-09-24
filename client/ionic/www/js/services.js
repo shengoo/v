@@ -1,4 +1,3 @@
-"use strict";
 angular.module('starter.services', [])
 
 .factory('Chats', function() {
@@ -49,9 +48,9 @@ angular.module('starter.services', [])
     }
   };
 })
-  .service('service',function($http){
+  .service('service',['$http',function($http){
     this.getAll = function(){
       var url = "http://182.92.153.230/api?callback=JSON_CALLBACK";
       return $http.jsonp(url);
     }
-  });
+  }]);
