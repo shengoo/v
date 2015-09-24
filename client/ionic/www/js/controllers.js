@@ -1,5 +1,16 @@
 angular.module('starter.controllers', [])
 
+.controller('movies',function($scope,service){
+  service.getAll().then(
+    function(response){
+      $scope.movies = response.data;
+    },
+    function(response){
+      console.log(response);
+    }
+  );
+})
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {

@@ -10,6 +10,14 @@ var movies = JSON.parse(fs.readFileSync('./resources/data.json', 'utf8'));
 var categories = JSON.parse(fs.readFileSync('./resources/category.json', 'utf8'));
 var pageSize = 20;
 
+function sendResult(req,res,result){
+  if(req.query.callback){
+    res.jsonp(result);
+  }else{
+    res.json(result);
+  }
+}
+
 router.get('/today', function(req, res, next) {
     var date = dateFormat(new Date(),"yyyy-mm-dd");
     var result = _.where(movies, {date: date});
@@ -19,15 +27,15 @@ router.get('/today', function(req, res, next) {
         result = movies.slice(0,3)
     }
 
-    res.json(result)
+    sendResult(req,res,result)
 });
 router.get('/category', function(req, res, next) {
-    res.json(categories);
+    sendResult(req,res,categories);
 });
 router.get('/getmoviebycategory/:category', function(req, res, next) {
     var category = req.params.category;
     var result = _.where(movies, {category: category});
-    res.json(result)
+    sendResult(req,res,result)
 });
 router.get('/getmoviebycategory/:category/:page', function(req, res, next) {
     var page = req.params.page;
@@ -35,7 +43,7 @@ router.get('/getmoviebycategory/:category/:page', function(req, res, next) {
     var end = (page + 1) * pageSize;
     var category = req.params.category;
     var result = _.where(movies, {category: category});
-    res.json(result.slice(start,end))
+    sendResult(req,res,result.slice(start,end))
 });
 router.get('/getmoviebydate/:date', function(req, res, next) {
     var date = req.params.date;
@@ -46,16 +54,16 @@ router.get('/getmoviebydate/:date', function(req, res, next) {
         result = movies.slice(0,3)
     }
 
-    res.json(result)
+    sendResult(req,res,result)
 });
 router.get('/', function(req,res,next){
-    res.json(movies);
+    sendResult(req,res,movies);
 });
 router.get('/:page', function(req,res,next){
     var page = req.params.page;
     var start = page * pageSize;
     var end = (page + 1) * pageSize;
-    res.json(movies.slice(start,end));
+    sendResult(req,res,movies.slice(start,end));
 });
 
 module.exports = router;
