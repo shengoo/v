@@ -47,7 +47,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.movies', {
     url: '/movies',
     views: {
-      'tab-dash': {
+      'tab-movies': {
         templateUrl: 'templates/tab-movies.html',
         controller: 'movies'
       }
