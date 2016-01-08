@@ -8,3 +8,4 @@
 #import "UMSocial.h"
 #import "UMSocialWechatHandler.h"
 #import "UMSocialQQHandler.h"
+#import "Pretools/Pretools.h"

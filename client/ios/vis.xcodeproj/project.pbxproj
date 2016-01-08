@@ -64,6 +64,8 @@
 		047FF6E31B73931A004E1209 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 047FF6E21B73931A004E1209 /* UIKit.framework */; };
 		048DA25B1B73625900F7F4E7 /* libMobClickLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 048DA2581B73625900F7F4E7 /* libMobClickLibrary.a */; };
 		048DA25D1B7363EF00F7F4E7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 048DA25C1B7363EF00F7F4E7 /* libz.dylib */; };
+		0496CAC71C3FF8D0000DB778 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496CAC61C3FF8D0000DB778 /* AudioToolbox.framework */; };
+		0496CAC91C3FF9C2000DB778 /* PreTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0496CAC81C3FF9C2000DB778 /* PreTools.framework */; };
 		049C193D1B5D39DE0031A77A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C193C1B5D39DE0031A77A /* AppDelegate.swift */; };
 		049C193F1B5D39DE0031A77A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C193E1B5D39DE0031A77A /* FirstViewController.swift */; };
 		049C19411B5D39DE0031A77A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049C19401B5D39DE0031A77A /* SecondViewController.swift */; };
@@ -173,6 +175,8 @@
 		048DA2591B73625900F7F4E7 /* MobClick.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClick.h; sourceTree = "<group>"; };
 		048DA25A1B73625900F7F4E7 /* MobClickSocialAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobClickSocialAnalytics.h; sourceTree = "<group>"; };
 		048DA25C1B7363EF00F7F4E7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0496CAC61C3FF8D0000DB778 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		0496CAC81C3FF9C2000DB778 /* PreTools.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PreTools.framework; sourceTree = "<group>"; };
 		049C19371B5D39DE0031A77A /* 微爱视.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微爱视.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		049C193B1B5D39DE0031A77A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		049C193C1B5D39DE0031A77A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,6 +199,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0496CAC71C3FF8D0000DB778 /* AudioToolbox.framework in Frameworks */,
 				047FF5F91B65B2BD004E1209 /* Foundation.framework in Frameworks */,
 				047FF6E31B73931A004E1209 /* UIKit.framework in Frameworks */,
 				047FF6E11B739315004E1209 /* libiconv.dylib in Frameworks */,
@@ -204,6 +209,7 @@
 				047FF6DD1B7392F3004E1209 /* libstdc++.dylib in Frameworks */,
 				047FF6DB1B7392E8004E1209 /* libsqlite3.dylib in Frameworks */,
 				047FF5FD1B65B2CB004E1209 /* Security.framework in Frameworks */,
+				0496CAC91C3FF9C2000DB778 /* PreTools.framework in Frameworks */,
 				047FF6D91B7392D0004E1209 /* QuartzCore.framework in Frameworks */,
 				047FF6D71B7392C9004E1209 /* OpenGLES.framework in Frameworks */,
 				047FF6D51B7392C3004E1209 /* Social.framework in Frameworks */,
@@ -456,6 +462,7 @@
 		261B1C5F1B93FDA100C77B34 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				0496CAC81C3FF9C2000DB778 /* PreTools.framework */,
 				047FF6831B73925C004E1209 /* umeng share */,
 				048DA2571B73604900F7F4E7 /* umeng analytics */,
 				261B1C601B93FE0100C77B34 /* SwiftyUserDefaults.swift */,
@@ -503,6 +510,7 @@
 		9E7D9CCB39BABE712C261F54 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0496CAC61C3FF8D0000DB778 /* AudioToolbox.framework */,
 				047FF6E21B73931A004E1209 /* UIKit.framework */,
 				047FF6E01B739315004E1209 /* libiconv.dylib */,
 				047FF6DE1B7392FA004E1209 /* CoreTelephony.framework */,
@@ -849,6 +857,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vis/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/vis",
 				);
 				INFOPLIST_FILE = vis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -881,6 +890,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vis/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
+					"$(PROJECT_DIR)/vis",
 				);
 				INFOPLIST_FILE = vis/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

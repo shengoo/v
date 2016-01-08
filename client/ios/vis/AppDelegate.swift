@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     var umengKey = "55c32328e0f55ae881000579"
+    var preKey = "37947416411d6e95611e180110938402"
 
     var window: UIWindow?
 //    var splashView: UIImageView?;
@@ -24,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         MobClick.startWithAppkey(umengKey)
         UMSocialData.setAppKey(umengKey)
+        PreTools.init(preKey, channel: "channel", config: PreToolsConfig.defaultConfig())
         
         //CFBundleVersion for build version
         if let version = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String{
