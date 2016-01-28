@@ -30,7 +30,7 @@
             android:adjustViewBounds="true"
             android:cropToPadding="false"
             android:scaleType="fitXY"
-
+            android:background="@null"
              />
 
     </RelativeLayout>
