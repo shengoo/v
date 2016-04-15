@@ -37,40 +37,5 @@
     </RelativeLayout>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:showDividers="middle">
-
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/tab00"
-            android:adjustViewBounds="true"
-            android:scaleType="fitCenter"
-            android:padding="5dp"
-            android:cropToPadding="true"
-            android:background="@null" />
-        <View android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:background="#000000"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="12dp">
-
-        </View>
-        <ImageButton
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:src="@drawable/tab00"
-            android:adjustViewBounds="true"
-            android:cropToPadding="false"
-            android:background="@null" />
-
-
-    </LinearLayout>
 
 </RelativeLayout>
