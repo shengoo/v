@@ -2,8 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/bottomBarItemOne"
-        android:title="Recents" />
+        android:title="@string/bb_all" />
     <item
         android:id="@+id/bottomBarItemTwo"
-        android:title="Recents" />
+        android:title="@string/bb_category" />
 </menu>

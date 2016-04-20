@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">vis</string>
+    <string name="app_name">微爱视</string>
+    <string name="bb_category">视频分类</string>
+    <string name="bb_all">每日精选</string>
 </resources>
