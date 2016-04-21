@@ -5,8 +5,20 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.sheng00.vis.MainActivity">
-    <RelativeLayout
+
+    <android.support.v7.widget.Toolbar
         android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:title=""/>
+
+    <RelativeLayout
+        android:layout_below="@id/my_toolbar"
+        android:id="@+id/my_toolbar2"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
@@ -50,27 +62,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <!--<fragment-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:name="com.sheng00.vis.fragments.AllVideoFragment"-->
-                <!--android:id="@+id/fragment_all"-->
-                <!--tools:layout="@layout/fragment_all_video"></fragment>-->
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:name="com.sheng00.vis.fragments.AllVideoFragment"
+                android:id="@+id/fragment_all"
+                tools:layout="@layout/fragment_all_video"></fragment>
 
-            <!--<fragment-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent"-->
-                <!--android:name="com.sheng00.vis.fragments.BlankFragment"-->
-                <!--android:id="@+id/fragment_category"-->
-                <!--tools:layout="@layout/fragment_blank"></fragment>-->
-            <TextView
+            <fragment
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="1"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="2"/>
+                android:name="com.sheng00.vis.fragments.BlankFragment"
+                android:id="@+id/fragment_category"
+                tools:layout="@layout/fragment_blank"></fragment>
+
         </ViewSwitcher>
 
     </RelativeLayout>

@@ -4,6 +4,8 @@ import android.support.annotation.IdRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ViewAnimator;
@@ -11,8 +13,16 @@ import android.widget.ViewSwitcher;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnMenuTabClickListener;
+import com.sheng00.vis.Model.Movie;
+import com.sheng00.vis.Service.MovieService;
 
-public class MainActivity extends AppCompatActivity {
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class MainActivity extends BaseActivity {
 
     private BottomBar mBottomBar;
     private ViewSwitcher container;
@@ -23,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myToolbar);
+//        myToolbar.setLogo(R.drawable.logo);
+//        myToolbar.setTitle("");
 
         container = (ViewSwitcher)findViewById(R.id.container);
 
@@ -58,6 +72,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        MovieService service = new MovieService(this);
+        service.getAll(new Callback<List<Movie>>() {
+            @Override
+            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
+                for (Movie movie:response.body()){
+                    System.out.println(movie.getTitle());
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Movie>> call, Throwable t) {
+
+            }
+        });
 
     }
 
@@ -69,6 +97,29 @@ public class MainActivity extends AppCompatActivity {
         // Necessary to restore the BottomBar's state, otherwise we would
         // lose the current tab on orientation change.
         mBottomBar.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.topbar_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                // User chose the "Settings" item, show the app settings UI...
+                System.out.println("User clicked setting");
+                return true;
+
+
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
     }
 
 
