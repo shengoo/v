@@ -72,20 +72,7 @@ public class MainActivity extends BaseActivity {
             }
         });
 
-        MovieService service = new MovieService(this);
-        service.getAll(new Callback<List<Movie>>() {
-            @Override
-            public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-                for (Movie movie:response.body()){
-                    System.out.println(movie.getTitle());
-                }
-            }
 
-            @Override
-            public void onFailure(Call<List<Movie>> call, Throwable t) {
-
-            }
-        });
 
     }
 

@@ -3,6 +3,7 @@ package com.sheng00.vis.Service;
 import android.content.Context;
 
 import com.sheng00.vis.Model.Movie;
+import com.sheng00.vis.Utils.Urls;
 
 import java.util.List;
 import java.util.concurrent.Executor;
@@ -26,7 +27,7 @@ public class MovieService {
 
     public MovieService(Context context){
         mContext = context;
-        Retrofit retrofit = new Retrofit.Builder().baseUrl(serverHost)
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(Urls.base)
                 .addConverterFactory(GsonConverterFactory.create()).build();
         service = retrofit.create(IMovieService.class);
     }
