@@ -35,8 +35,8 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
-//        myToolbar.setLogo(R.drawable.logo);
-//        myToolbar.setTitle("");
+        myToolbar.setLogo(R.drawable.logo);
+        myToolbar.setTitle("");
 
         container = (ViewSwitcher)findViewById(R.id.container);
 
