@@ -3,6 +3,7 @@ package com.sheng00.vis.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -46,13 +47,13 @@ public class AllVideoFragment extends Fragment {
 
     private void setupRecyclerView(final RecyclerView recyclerView) {
         recyclerView.setHasFixedSize(true);
-//        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
+//        recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(), 2));
         recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
 //        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,1));
 
 
-        adapter = new AllVideoAdapter(recyclerView.getContext());
-        recyclerView.setAdapter(adapter);
+//        adapter = new AllVideoAdapter(recyclerView.getContext());
+//        recyclerView.setAdapter(adapter);
 
         MovieService service = new MovieService(getContext());
         service.getAll(new Callback<List<Movie>>() {
@@ -61,7 +62,9 @@ public class AllVideoFragment extends Fragment {
                 getActivity().runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        adapter.setData(response.body());
+                        adapter = new AllVideoAdapter(response.body());
+                        recyclerView.setAdapter(adapter);
+//                        adapter.setData(response.body());
                         recyclerView.setVisibility(View.VISIBLE);
                     }
                 });

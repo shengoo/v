@@ -12,6 +12,7 @@ import com.sheng00.vis.CustomView.LoadingImageView;
 import com.sheng00.vis.Model.Movie;
 import com.sheng00.vis.R;
 import com.sheng00.vis.Utils.Urls;
+import com.sheng00.vis.ViewHolders.MovieItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,27 +20,26 @@ import java.util.List;
 /**
  * Created by UC206612 on 2016/4/21.
  */
-public class AllVideoAdapter extends RecyclerView.Adapter<AllVideoAdapter.ViewHolder> {
+public class AllVideoAdapter extends RecyclerView.Adapter<MovieItem> {
 
-    private Context context;
     private List<Movie> mDataset = new ArrayList<Movie>();
 
-    public AllVideoAdapter(Context context){
-        this.context = context;
+    public AllVideoAdapter(List<Movie> data){
+        mDataset = data;
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MovieItem onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.movie_list_item, parent, false);
 //        v.setBackgroundResource(mBackground);
 //        System.out.println(mBackground);
-        ViewHolder vh = new ViewHolder(v);
+        MovieItem vh = new MovieItem(v);
         return vh;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(MovieItem holder, int position) {
         System.out.println("get item at: " + position);
         final Movie item = mDataset.get(position);
         holder.title.setText(item.getTitle());
@@ -69,20 +69,6 @@ public class AllVideoAdapter extends RecyclerView.Adapter<AllVideoAdapter.ViewHo
         notifyDataSetChanged();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
 
-        public final View view;
-        public TextView title;
-        public TextView summary;
-        public LoadingImageView imageView;
-
-        public ViewHolder(View v){
-            super(v);
-            view = v;
-            title = (TextView) v.findViewById(R.id.movie_list_item_title);
-//            summary = (TextView) v.findViewById(R.id.summary);
-//            imageView = (LoadingImageView) v.findViewById(R.id.image);
-        }
-    }
 
 }
