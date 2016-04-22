@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
 import com.sheng00.vis.CustomView.LoadingImageView;
 import com.sheng00.vis.Model.Movie;
 import com.sheng00.vis.R;
@@ -44,8 +45,8 @@ public class AllVideoAdapter extends RecyclerView.Adapter<MovieItem> {
         final Movie item = mDataset.get(position);
         holder.title.setText(item.getTitle());
 //        holder.summary.setText(alb.getSummary());
-        final String imageUrl = Urls.base + item.getImage();
-//        ImageLoader.getInstance().displayImage(imageUrl,holder.imageView);
+        final String imageUrl = Urls.base  + "/file/" + item.getImage();
+        ImageLoader.getInstance().displayImage(imageUrl,holder.cover);
 //        holder.imageView.setImage(imageUrl);
 //        holder.view.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -60,13 +61,7 @@ public class AllVideoAdapter extends RecyclerView.Adapter<MovieItem> {
 
     @Override
     public int getItemCount() {
-        System.out.println("item count:" + mDataset.size());
         return mDataset.size();
-    }
-
-    public void setData(List<Movie> data){
-        mDataset = data;
-        notifyDataSetChanged();
     }
 
 

@@ -18,5 +18,6 @@ public class MovieItem extends RecyclerView.ViewHolder {
     public MovieItem(View itemView) {
         super(itemView);
         title = (TextView) itemView.findViewById(R.id.movie_list_item_title);
+        cover = (ImageView) itemView.findViewById(R.id.movie_list_item_cover);
     }
 }
