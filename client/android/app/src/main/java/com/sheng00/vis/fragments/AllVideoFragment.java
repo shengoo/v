@@ -48,7 +48,7 @@ public class AllVideoFragment extends Fragment {
     private void setupRecyclerView(final RecyclerView recyclerView) {
         recyclerView.setHasFixedSize(true);
 //        recyclerView.setLayoutManager(new GridLayoutManager(recyclerView.getContext(), 2));
-        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
+//        recyclerView.setLayoutManager(new LinearLayoutManager(recyclerView.getContext()));
 //        recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,1));
 
 
