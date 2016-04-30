@@ -6,10 +6,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.sheng00.vis.CustomView.LoadingImageView;
+import com.sheng00.vis.Activities.VideoDetailActivity;
 import com.sheng00.vis.Model.Movie;
 import com.sheng00.vis.R;
 import com.sheng00.vis.Utils.Urls;
@@ -48,15 +47,15 @@ public class AllVideoAdapter extends RecyclerView.Adapter<MovieItem> {
         final String imageUrl = Urls.base  + "/file/" + item.getImage();
         ImageLoader.getInstance().displayImage(imageUrl,holder.cover);
 //        holder.imageView.setImage(imageUrl);
-//        holder.view.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Context context = v.getContext();
-//                Intent intent = new Intent(context, AlbActivity.class);
-//                intent.putExtra("Alb",item);
-//                context.startActivity(intent);
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Context context = v.getContext();
+                Intent intent = new Intent(context, VideoDetailActivity.class);
+                intent.putExtra("Movie", item);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

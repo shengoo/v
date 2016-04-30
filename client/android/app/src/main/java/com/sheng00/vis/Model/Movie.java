@@ -1,9 +1,11 @@
 package com.sheng00.vis.Model;
 
+import java.io.Serializable;
+
 /**
  * Created by UC206612 on 2016/4/21.
  */
-public class Movie {
+public class Movie implements Serializable {
     private int id;
     private String title;
     private String description;
