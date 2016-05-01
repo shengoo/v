@@ -10,7 +10,8 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <android:uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -28,6 +29,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".Activities.VideoDetailActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"></activity>
+
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="571865dfe0f55a1d7e00236d" />
@@ -35,7 +40,6 @@
             android:name="UMENG_CHANNEL"
             android:value="Default" />
 
-        <activity android:name=".Activities.VideoDetailActivity"></activity>
     </application>
 
 </manifest>

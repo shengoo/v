@@ -6,11 +6,19 @@
     android:orientation="vertical"
     tools:context="com.sheng00.vis.Activities.VideoDetailActivity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="title" />
+
+    <!--<IjkMediaPlayer-->
+
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content">-->
+
+    <!--</IjkMediaPlayer>-->
+    <!--<VideoView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:id="@+id/videoView"-->
+    <!--android:layout_weight="1" />-->
+
 
     <LinearLayout
         android:layout_width="match_parent"
