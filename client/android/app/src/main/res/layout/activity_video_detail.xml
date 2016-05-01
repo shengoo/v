@@ -6,19 +6,33 @@
     android:orientation="vertical"
     tools:context="com.sheng00.vis.Activities.VideoDetailActivity">
 
+    <RelativeLayout
+        android:id="@+id/videoContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
 
-    <!--<IjkMediaPlayer-->
+        <com.sheng00.vis.CustomView.StretchVideoView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:keepScreenOn="true"
+            android:id="@+id/videoView" />
 
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content">-->
+        <ImageView
+            android:visibility="gone"
+            android:id="@+id/preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/loading"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="hello"/>
 
-    <!--</IjkMediaPlayer>-->
-    <!--<VideoView-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:id="@+id/videoView"-->
-    <!--android:layout_weight="1" />-->
-
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
